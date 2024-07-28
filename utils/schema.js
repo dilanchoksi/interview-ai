@@ -1,6 +1,6 @@
 import { pgTable, serial, text, varchar } from "drizzle-orm/pg-core";
 
-export const InterView = pgTable("interView", {
+export const InterView = pgTable("InterView AI", {
   id: serial("id").primaryKey(),
   jsonMockResp: text("jsonMockResp").notNull(),
   jobPos: varchar("jobPos").notNull(),
