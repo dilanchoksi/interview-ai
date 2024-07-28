@@ -3,7 +3,7 @@ import { pgTable, serial, text, varchar } from "drizzle-orm/pg-core";
 export const InterView = pgTable("interView", {
   id: serial("id").primaryKey(),
   jsonMockResp: text("jsonMockResp").notNull(),
-  jobPosition: varchar("jobPosition").notNull(),
+  jobPos: varchar("jobPos").notNull(),
   jobDesc: varchar("jobDesc").notNull(),
   jobExp: varchar("jobExp").notNull(),
   createdBy: varchar("createdBy").notNull(),

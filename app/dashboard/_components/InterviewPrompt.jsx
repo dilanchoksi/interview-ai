@@ -35,7 +35,6 @@ function InterviewPrompt() {
   const onSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
-    console.log(jobPos, jobDesc, jobExp);
     const InputPrompt = `Job Position: ${jobPos}; Job Description: ${jobDesc}; Years of Experience: ${jobExp}. Using this job information, give me ${process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT} interview questions and answers, all in JSON format.`;
     const result = await chatSession.sendMessage(InputPrompt);
     const MockJsonResponse = result.response
@@ -50,7 +49,7 @@ function InterviewPrompt() {
         .values({
           mockId: uuidv4(),
           jsonMockResp: MockJsonResponse,
-          jobPosition: jobPos,
+          jobPos: jobPos,
           jobDesc: jobDesc,
           jobExp: jobExp,
           createdBy: user?.primaryEmailAddress?.emailAddress,
