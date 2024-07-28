@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import Webcam from "react-webcam";
 import useSpeechToText from "react-hook-speech-to-text";
 import { Mic } from "lucide-react";
+import { toast } from "sonner";
 
 function Answer() {
   const [userAnswer, setUserAnswer] = useState("");
@@ -27,6 +28,20 @@ function Answer() {
     });
   }, [results]);
 
+  const SaveUserAnswer = () => {
+    if (isRecording) {
+      stopSpeechToText();
+      if (userAnswer?.length < 10) {
+        toast("Error while saving your answer. Please record again.");
+        return;
+      }
+
+      const feedbackPrompt = "Question";
+    } else {
+      startSpeechToText();
+    }
+  };
+
   return (
     <div className="flex items-center justify-center flex-col">
       <div className="flex flex-col mt-20 justify-center items-center bg-black rounded-lg p-5">
@@ -41,14 +56,10 @@ function Answer() {
           style={{ height: 300, width: "100%", zIndex: 10 }}
         />
       </div>
-      <Button
-        variant="outline"
-        className="my-10"
-        onClick={isRecording ? stopSpeechToText : startSpeechToText}
-      >
+      <Button variant="outline" className="my-10" onClick={SaveUserAnswer}>
         {isRecording ? (
-          <h2 className="text-red-600">
-            <Mic /> "Recording..."
+          <h2 className="text-red-600 flex gap-2">
+            <Mic /> Stop Recording...
           </h2>
         ) : (
           "Record Answer"
