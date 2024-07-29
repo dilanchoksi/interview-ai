@@ -1,5 +1,6 @@
 import React from "react";
 import InterviewPrompt from "./_components/InterviewPrompt";
+import InterviewList from "./_components/InterviewList";
 
 const Dashboard = () => {
   return (
@@ -10,6 +11,9 @@ const Dashboard = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 my-5">
         <InterviewPrompt />
       </div>
+
+      {/* Previous interviews list */}
+      <InterviewList />
     </div>
   );
 };

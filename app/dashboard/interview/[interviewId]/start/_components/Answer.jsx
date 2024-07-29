@@ -25,6 +25,7 @@ function Answer({ mockInterviewQuestion, activeQuestionIndex, interviewData }) {
     results,
     startSpeechToText,
     stopSpeechToText,
+    setResults,
   } = useSpeechToText({
     continuous: true,
     useLegacyResults: false,
@@ -37,7 +38,7 @@ function Answer({ mockInterviewQuestion, activeQuestionIndex, interviewData }) {
   }, [results]);
 
   useEffect(() => {
-    if (!isRecording && userAnswer.length > 5) {
+    if (!isRecording && userAnswer.length > 1) {
       SaveUserAnswer();
     }
   }, [userAnswer]);
@@ -75,7 +76,10 @@ function Answer({ mockInterviewQuestion, activeQuestionIndex, interviewData }) {
     if (resp) {
       toast("Answer recorded successfully.");
     }
+
     setUserAnswer("");
+    setResults([]);
+
     setLoading(false);
   };
 

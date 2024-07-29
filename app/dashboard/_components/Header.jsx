@@ -20,20 +20,6 @@ function Header() {
         </li>
         <li
           className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${
-            path == "/questions" && "text-primary font-bold"
-          }`}
-        >
-          Questions
-        </li>
-        <li
-          className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${
-            path == "/upgrade" && "text-primary font-bold"
-          }`}
-        >
-          Upgrade
-        </li>
-        <li
-          className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${
             path == "/how" && "text-primary font-bold"
           }`}
         >
