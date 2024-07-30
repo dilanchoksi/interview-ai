@@ -93,7 +93,6 @@ function Answer({ mockInterviewQuestion, activeQuestionIndex, interviewData }) {
       </div>
       <Button
         disabled={loading}
-        variant="outline"
         className="my-5 text-xl text-white bg-primary"
         onClick={ToggleRecording}
       >

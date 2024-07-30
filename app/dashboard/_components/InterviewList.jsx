@@ -42,7 +42,7 @@ function InterviewList() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-3">
         {interviewList &&
           interviewList.map((interview, index) => (
-            <div className="border shadow-sm rounded-lg p-3">
+            <div key={index} className="border shadow-sm rounded-lg p-3">
               <h2 className="font-bold text-primary">{interview?.jobPos}</h2>
               <h2 className="text-sm text-zinc-600">
                 {interview?.jobExp} Years of Experience

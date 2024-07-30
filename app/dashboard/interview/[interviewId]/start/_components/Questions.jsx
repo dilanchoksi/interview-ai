@@ -24,9 +24,9 @@ function Questions({
               <h2
                 onClick={() => setActiveQuestionIndex(index)}
                 key={index}
-                className={`p-2 rounded-full text-xs md:text-sm text-center cursor-pointer ${
+                className={`p-2 rounded-full text-xs md:text-sm text-center cursor-pointer hover:scale-105 transition-all shadow-md ${
                   activeQuestionIndex == index
-                    ? "bg-primary text-white"
+                    ? "bg-primary text-white font-bold"
                     : "bg-secondary"
                 }`}
               >
