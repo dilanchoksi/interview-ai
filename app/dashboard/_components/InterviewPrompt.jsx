@@ -9,7 +9,6 @@ import {
   DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -96,7 +95,7 @@ function InterviewPrompt() {
                     ></Input>
                   </div>
                   <div className="my-3">
-                    <label>Job Description/Tech Stack (In Short)</label>
+                    <label>Job Description</label>
                     <Textarea
                       placeholder="Ex. React, Angular, NodeJs, MySql, etc."
                       required
@@ -117,7 +116,7 @@ function InterviewPrompt() {
                 <div className="flex gap-5 justify-end">
                   <Button
                     type="button"
-                    variant="ghost"
+                    variant="destructive"
                     onClick={() => setOpenDialog(false)}
                   >
                     Cancel
@@ -129,7 +128,7 @@ function InterviewPrompt() {
                         "Generating from AI"
                       </>
                     ) : (
-                      "Start InterView"
+                      "Start Interview"
                     )}
                   </Button>
                 </div>

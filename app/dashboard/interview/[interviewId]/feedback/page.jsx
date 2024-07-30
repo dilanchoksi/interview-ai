@@ -42,10 +42,6 @@ function Feedback({ params }) {
           <h2 className="font-bold text-2xl">
             Here is your interview feedback
           </h2>
-          <h2 className="text-primary text-lg my-3">
-            Your overall interview rating:{" "}
-            <strong>(FEATURE COMING SOON)</strong>
-          </h2>
           <h2 className="text-sm text-zinc-500">
             We'll show you your answer for each question, along with an
             AI-generated confident answer, feedback for you, and your overall
@@ -59,15 +55,15 @@ function Feedback({ params }) {
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <div className="flex flex-col gap-2">
-                    <h2 className="text-red-500 p-2 border rounded-lg">
+                    <h2 className="text-black p-2 border bg-yellow-50 rounded-lg">
                       <strong>Rating: </strong>
                       {item.rating}
                     </h2>
-                    <h2 className="p-2 border rounded-lg bg-red-50 text-sm text-red-900">
+                    <h2 className="p-2 border rounded-lg bg-blue-50 text-sm ">
                       <strong>Your answer: </strong>
                       {item.userAns}
                     </h2>
-                    <h2 className="p-2 border rounded-lg bg-blue-50 text-sm text-primary">
+                    <h2 className="p-2 border rounded-lg bg-orange-50 text-sm">
                       <strong>Feedback: </strong>
                       {item.feedback}
                     </h2>
@@ -85,7 +81,9 @@ function Feedback({ params }) {
           No Interview Feedback Found
         </h2>
       )}
-      <Button onClick={() => router.replace("/dashboard")}>Go Home</Button>
+      <div className="mt-5 text-end">
+        <Button onClick={() => router.replace("/dashboard")}>Go Home</Button>
+      </div>
     </div>
   );
 }

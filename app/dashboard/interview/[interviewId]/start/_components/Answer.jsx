@@ -53,7 +53,7 @@ function Answer({ mockInterviewQuestion, activeQuestionIndex, interviewData }) {
 
   const SaveUserAnswer = async () => {
     setLoading(true);
-    const feedbackPrompt = `Question: ${mockInterviewQuestion[activeQuestionIndex]?.question}; User Answer: ${userAnswer}. Depending on this interview question and interviewee answer, give me descriptive feedback for the interviewee inclue areas of improvement (if any), and also give me a rating for the answer. The goal is to help the user improve their answer. Keep all feedback to 4-6 lines. You should return your result in JSON format with two fields: rating and feedback.`;
+    const feedbackPrompt = `Question: ${mockInterviewQuestion[activeQuestionIndex]?.question}; User Answer: ${userAnswer}. Depending on this interview question and interviewee answer, give me descriptive feedback for the interviewee include areas of improvement (if any), and also give me a rating for the answer. The goal is to help the user improve their answer. You should return your result in JSON format with two fields: rating and feedback.`;
     const result = await chatSession.sendMessage(feedbackPrompt);
     const mockJsonResp = result.response
       .text()
