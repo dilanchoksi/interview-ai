@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { WebcamIcon } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import Webcam from "react-webcam";
 import useSpeechToText from "react-hook-speech-to-text";
@@ -85,22 +85,16 @@ function Answer({ mockInterviewQuestion, activeQuestionIndex, interviewData }) {
 
   return (
     <div className="flex items-center justify-center flex-col">
-      <div className="flex flex-col mt-20 justify-center items-center bg-black rounded-lg p-5">
-        <Image
-          src="/webcam.webp"
-          width={200}
-          height={200}
-          className="absolute"
-        />
+      <div className="rounded-lg pt-16">
         <Webcam
+          className="border-2 border-primary rounded-lg"
           mirrored={true}
-          style={{ height: 300, width: "100%", zIndex: 10 }}
         />
       </div>
       <Button
         disabled={loading}
         variant="outline"
-        className="my-10"
+        className="my-5 text-xl text-white bg-primary"
         onClick={ToggleRecording}
       >
         {isRecording ? (

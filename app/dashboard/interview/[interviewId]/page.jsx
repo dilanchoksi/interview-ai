@@ -62,16 +62,16 @@ function Interview({ params }) {
         <div>
           {webCamEnabled ? (
             <Webcam
+              className="border-2 border-primary rounded-lg"
               onUserMedia={() => setWebCamEnabled(true)}
               onUserMediaError={() => setWebCamEnabled(false)}
               mirrored={true}
-              style={{ height: 300, width: 300 }}
             />
           ) : (
             <>
-              <WebcamIcon className="h-72 w-full my-7 p-20 bg-secondary rounded-lg border" />
+              <WebcamIcon className="h-72 w-full my-4 p-20 bg-secondary rounded-lg border" />
               <Button
-                variant="ghost"
+                variant="outline"
                 className="w-full"
                 onClick={() => setWebCamEnabled(true)}
               >

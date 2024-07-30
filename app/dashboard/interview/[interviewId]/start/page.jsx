@@ -38,6 +38,7 @@ function StartInterview({ params }) {
         <Questions
           mockInterviewQuestion={mockInterviewQuestion}
           activeQuestionIndex={activeQuestionIndex}
+          setActiveQuestionIndex={setActiveQuestionIndex}
         />
 
         {/* Video/Audio recording */}
@@ -51,6 +52,8 @@ function StartInterview({ params }) {
       <div className="flex justify-end gap-6">
         {activeQuestionIndex > 0 && (
           <Button
+            className="bg-secondary"
+            variant="outline"
             onClick={() => setActiveQuestionIndex(activeQuestionIndex - 1)}
           >
             Previous Question
@@ -58,6 +61,8 @@ function StartInterview({ params }) {
         )}
         {activeQuestionIndex != mockInterviewQuestion?.length - 1 && (
           <Button
+            className="bg-secondary"
+            variant="outline"
             onClick={() => setActiveQuestionIndex(activeQuestionIndex + 1)}
           >
             Next Question
