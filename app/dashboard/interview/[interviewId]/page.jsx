@@ -59,7 +59,7 @@ function Interview({ params }) {
             </h2>
           </div>
         </div>
-        <div>
+        <div className="text-center">
           {webCamEnabled ? (
             <Webcam
               className="border-2 border-primary rounded-lg"
@@ -79,12 +79,10 @@ function Interview({ params }) {
               </Button>
             </>
           )}
+          <Link href={`/dashboard/interview/${params.interviewId}/start`}>
+            <Button className="mt-3">Start Interview</Button>
+          </Link>
         </div>
-      </div>
-      <div className="flex justify-end items-end">
-        <Link href={`/dashboard/interview/${params.interviewId}/start`}>
-          <Button>Start Interview</Button>
-        </Link>
       </div>
     </div>
   );
