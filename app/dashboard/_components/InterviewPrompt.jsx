@@ -89,7 +89,7 @@ function InterviewPrompt() {
                   <div className="mt-7 mb-3">
                     <label>Job Position/Role</label>
                     <Input
-                      placeholder="Ex. Full-Stack Developer"
+                      placeholder="Ex. Marine Biologist"
                       required
                       onChange={(event) => setJobPos(event.target.value)}
                     ></Input>
@@ -97,7 +97,7 @@ function InterviewPrompt() {
                   <div className="my-3">
                     <label>Job Description</label>
                     <Textarea
-                      placeholder="Ex. React, Angular, NodeJs, MySql, etc."
+                      placeholder="Enter sentences, a comma-separated list of keywords, or both!"
                       required
                       onChange={(event) => setJobDesc(event.target.value)}
                     ></Textarea>
