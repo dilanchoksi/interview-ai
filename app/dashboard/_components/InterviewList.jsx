@@ -48,7 +48,7 @@ function InterviewList() {
                 {interview?.jobExp} Years of Experience
               </h2>
               <h2 className="text-xs text-zinc-400">
-                Created at {interview?.createdAt}
+                Created on {interview?.createdAt}
               </h2>
               <div className="flex justify-between mt-2 gap-5">
                 <Button
@@ -56,7 +56,7 @@ function InterviewList() {
                   className="w-full"
                   onClick={() => onStart(interview?.mockId)}
                 >
-                  Start
+                  Continue
                 </Button>
                 <Button
                   size="sm"

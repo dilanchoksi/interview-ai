@@ -50,24 +50,24 @@ function Feedback({ params }) {
           {feedbackList &&
             feedbackList.map((item, index) => (
               <Collapsible key={index} className="mt-7">
-                <CollapsibleTrigger className="flex justify-between gap-7 p-2 bg-secondary rounded-lg my-2 text-left w-full">
+                <CollapsibleTrigger className="flex justify-between gap-7 p-2 bg-zinc-200 rounded-lg my-2 text-left w-full">
                   {item.question} <ChevronsUpDown className="h-5 w-5" />
                 </CollapsibleTrigger>
                 <CollapsibleContent>
                   <div className="flex flex-col gap-2">
-                    <h2 className="text-black p-2 border bg-yellow-50 rounded-lg">
+                    <h2 className="p-2 border bg-secondary rounded-lg text-sm">
                       <strong>Rating: </strong>
                       {item.rating}
                     </h2>
-                    <h2 className="p-2 border rounded-lg bg-blue-50 text-sm ">
+                    <h2 className="p-2 border rounded-lg bg-secondary text-sm">
                       <strong>Your answer: </strong>
                       {item.userAns}
                     </h2>
-                    <h2 className="p-2 border rounded-lg bg-orange-50 text-sm">
+                    <h2 className="p-2 border rounded-lg bg-secondary text-sm">
                       <strong>Feedback: </strong>
                       {item.feedback}
                     </h2>
-                    <h2 className="p-2 border rounded-lg bg-green-50 text-sm text-green-900">
+                    <h2 className="p-2 border rounded-lg bg-secondary text-sm">
                       <strong>Confident answer: </strong>
                       {item.aiAns}
                     </h2>
@@ -82,7 +82,12 @@ function Feedback({ params }) {
         </h2>
       )}
       <div className="mt-5 text-end">
-        <Button onClick={() => router.replace("/dashboard")}>Go Home</Button>
+        <Button
+          className="text-lg"
+          onClick={() => router.replace("/dashboard")}
+        >
+          Go Home
+        </Button>
       </div>
     </div>
   );
