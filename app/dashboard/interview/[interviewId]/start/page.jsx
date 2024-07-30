@@ -49,10 +49,10 @@ function StartInterview({ params }) {
         />
       </div>
 
-      <div className="flex justify-end gap-6">
+      <div className="flex justify-center gap-8 mt-16">
         {activeQuestionIndex > 0 && (
           <Button
-            className="bg-secondary"
+            className="bg-secondary text-xl"
             variant="outline"
             onClick={() => setActiveQuestionIndex(activeQuestionIndex - 1)}
           >
@@ -61,7 +61,7 @@ function StartInterview({ params }) {
         )}
         {activeQuestionIndex != mockInterviewQuestion?.length - 1 && (
           <Button
-            className="bg-secondary"
+            className="bg-secondary text-xl"
             variant="outline"
             onClick={() => setActiveQuestionIndex(activeQuestionIndex + 1)}
           >
@@ -72,7 +72,9 @@ function StartInterview({ params }) {
           <Link
             href={`/dashboard/interview/${interviewData?.mockId + "/feedback"}`}
           >
-            <Button>End Interview</Button>
+            <Button className="text-xl" variant="destructive">
+              End Interview
+            </Button>
           </Link>
         )}
       </div>
