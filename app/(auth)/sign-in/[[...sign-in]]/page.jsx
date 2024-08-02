@@ -16,7 +16,7 @@ export default function Page() {
             <a className="block text-white" href="#">
               <span className="sr-only">Home</span>
               <Image
-                src="/logo_auth.svg"
+                src="/logo-dash.svg"
                 width={50}
                 height={25}
                 alt="logo"

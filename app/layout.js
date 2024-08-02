@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <head>
           <title>InterView AI</title>
-          <link rel="icon" href="logo.svg" />
+          <link rel="icon" href="logo-fav.svg" />
         </head>
         <body className={inter.className}>
           <Toaster /> {children}

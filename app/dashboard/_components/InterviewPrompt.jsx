@@ -40,7 +40,6 @@ function InterviewPrompt() {
       .text()
       .replace("```json", "")
       .replace("```", "");
-    console.log(JSON.parse(MockJsonResponse));
     setJsonResponse(MockJsonResponse);
     if (MockJsonResponse) {
       const response = await db
@@ -55,7 +54,6 @@ function InterviewPrompt() {
           createdAt: moment().format("MM-DD-YYYY"),
         })
         .returning({ mockId: InterView.mockId });
-      console.log("Inserted ID: ", response);
       if (response) {
         setOpenDialog(false);
         router.push(`/dashboard/interview/${response[0]?.mockId}`);

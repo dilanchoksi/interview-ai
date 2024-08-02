@@ -10,13 +10,13 @@ function Header() {
   const path = usePathname();
   useEffect;
   return (
-    <div className="flex p-4 items-center justify-between bg-secondary shadow-sm">
-      <Image src="/logo.svg" width={50} height={25} alt="logo"></Image>
+    <div className="flex p-4 items-center justify-between bg-primary shadow-sm">
+      <Image src="/logo-dash.svg" width={50} height={25} alt="logo"></Image>
       <ul className="hidden md:flex gap-6">
         <li
           onClick={() => router.push("/dashboard")}
-          className={`hover:text-primary hover:font-bold transition-all cursor-pointer ${
-            path == "/dashboard" && "text-primary font-bold"
+          className={`hover:scale-110 hover:font-bold transition-all cursor-pointer ${
+            path == "/dashboard" && "text-secondary font-bold"
           }`}
         >
           Dashboard

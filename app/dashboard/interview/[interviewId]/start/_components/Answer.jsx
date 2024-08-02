@@ -58,7 +58,6 @@ function Answer({ mockInterviewQuestion, activeQuestionIndex, interviewData }) {
       .text()
       .replace("```json", "")
       .replace("```", "");
-    console.log(mockJsonResp);
     const jsonFeedbackResp = JSON.parse(mockJsonResp);
 
     const resp = await db.insert(UserAnswer).values({
