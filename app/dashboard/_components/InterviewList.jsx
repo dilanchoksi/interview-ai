@@ -1,6 +1,18 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog";
+
 import { db } from "@/utils/db";
 import { InterView } from "@/utils/schema";
 import { useUser } from "@clerk/nextjs";
@@ -21,6 +33,14 @@ function InterviewList() {
     router.push(`/dashboard/interview/${mockId}/feedback`);
   };
 
+  const onDelete = async (mockId) => {
+    const result = await db
+      .delete(InterView)
+      .where(eq(InterView.mockId, mockId));
+    getInterviewList();
+    console.log(result);
+  };
+
   useEffect(() => {
     user && getInterviewList();
   }, [user]);
@@ -39,6 +59,13 @@ function InterviewList() {
   return (
     <div>
       <h2 className="font-medium text-lg">Previous Interviews</h2>
+      <div>
+        {interviewList.length == 0 && (
+          <h2 className="text-gray-500">
+            Nothing to see here. Get started above!
+          </h2>
+        )}
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-3">
         {interviewList &&
           interviewList.map((interview, index) => (
@@ -66,6 +93,34 @@ function InterviewList() {
                 >
                   Feedback
                 </Button>
+
+                <AlertDialog>
+                  <AlertDialogTrigger variant="destructive">
+                    <Button size="sm" variant="destructive">
+                      Delete
+                    </Button>
+                  </AlertDialogTrigger>
+                  <AlertDialogContent>
+                    <AlertDialogHeader>
+                      <AlertDialogTitle>
+                        Are you absolutely sure?
+                      </AlertDialogTitle>
+                      <AlertDialogDescription>
+                        This action cannot be undone. This will permanently
+                        delete your account and remove your data from our
+                        servers.
+                      </AlertDialogDescription>
+                    </AlertDialogHeader>
+                    <AlertDialogFooter>
+                      <AlertDialogCancel>Cancel</AlertDialogCancel>
+                      <AlertDialogAction
+                        onClick={() => onDelete(interview?.mockId)}
+                      >
+                        Delete
+                      </AlertDialogAction>
+                    </AlertDialogFooter>
+                  </AlertDialogContent>
+                </AlertDialog>
               </div>
             </div>
           ))}
