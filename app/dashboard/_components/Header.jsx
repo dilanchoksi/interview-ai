@@ -15,7 +15,7 @@ function Header() {
       <ul className="hidden md:flex gap-6">
         <li
           onClick={() => router.push("/dashboard")}
-          className={`hover:scale-110 hover:font-bold transition-all cursor-pointer ${
+          className={`hover:font-bold transition-all cursor-pointer text-secondary ${
             path == "/dashboard" && "text-secondary font-bold"
           }`}
         >
