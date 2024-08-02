@@ -12,7 +12,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-
 import { db } from "@/utils/db";
 import { InterView } from "@/utils/schema";
 import { useUser } from "@clerk/nextjs";
@@ -34,11 +33,8 @@ function InterviewList() {
   };
 
   const onDelete = async (mockId) => {
-    const result = await db
-      .delete(InterView)
-      .where(eq(InterView.mockId, mockId));
+    await db.delete(InterView).where(eq(InterView.mockId, mockId));
     getInterviewList();
-    console.log(result);
   };
 
   useEffect(() => {
@@ -51,8 +47,6 @@ function InterviewList() {
       .from(InterView)
       .where(eq(InterView.createdBy, user?.primaryEmailAddress.emailAddress))
       .orderBy(desc(InterView.id));
-
-    console.log(result);
     setInterviewList(result);
   };
 
