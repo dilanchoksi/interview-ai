@@ -60,7 +60,7 @@ function InterviewList() {
           </h2>
         )}
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-3">
+      <div className="flex flex-wrap gap-5 my-3">
         {interviewList &&
           interviewList.map((interview, index) => (
             <div key={index} className="border shadow-sm rounded-lg p-3">
