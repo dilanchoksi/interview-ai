@@ -12,7 +12,6 @@ const Dashboard = () => {
         <InterviewPrompt />
       </div>
 
-      {/* Previous interviews list */}
       <InterviewList />
     </div>
   );
